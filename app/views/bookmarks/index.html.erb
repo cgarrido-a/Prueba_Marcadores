@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookmarks</h1>
+
+<%= render 'form', bookmark: @bookmark %>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Variety</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @bookmarks %>
+   
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmark', new_bookmark_path, :class => 'btn btn-sm btn-secondary mb-5 text-white'  %>
+
+
+<div class="chart mt-5">
+  <%=  pie_chart  @bookmark_pieChart,  title: "Distribución de tipo de marcadores", height: '500px' %>
+</div>
+
